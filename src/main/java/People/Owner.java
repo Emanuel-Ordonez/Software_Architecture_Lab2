@@ -1,15 +1,20 @@
 package People;
 import Main.*;
 import Task.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Owner extends People {
-    private List<Company> owns;
-    private List<Manager> osManager;
+    private Company owns;
+    private List<Manager> osManager = new ArrayList<Manager>();
     
     
     public Owner(String inName, String inPhone){
         super(inName,inPhone);
+    }
+    
+    public void addCompany(Company c){
+        owns=c;
     }
 
     private void createProject(){
@@ -28,7 +33,7 @@ public class Owner extends People {
         
     }
     
-    public void announceNews(){
-        
+    public void announceNews(String news){
+        owns.sendAnnounce(news); 
     }
 }

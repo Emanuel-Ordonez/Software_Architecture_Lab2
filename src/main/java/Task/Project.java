@@ -1,13 +1,14 @@
 package Task;
 import Main.*;
 import People.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Project {
     private String projectName;
     private int status;
-    private List<Task> tasklist;
+    private List<Task> tasklist= new ArrayList<Task>();
     
     public void addTask(Task t){
         tasklist.add(t);

@@ -6,10 +6,10 @@ import java.util.*;
 
 public class Worker extends Employee{
     private Worker delegate;
-    private List<Worker> colleagues;
+    private List<Worker> colleagues=new ArrayList<Worker>();
     private Manager myManager;
-    private List<Task> doneTasks;
-    private List<Task> assignedTasks;
+    private List<Task> doneTasks=new ArrayList<Task>();
+    private List<Task> assignedTasks=new ArrayList<Task>();
 
     //constructors
     public Worker(String inName, String inPhone){

@@ -1,14 +1,15 @@
 package People;
 import Main.*;
 import Task.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Manager extends Employee{
     private Manager Delegate;
-    private List<Manager> colleagues;
-    private List<Worker> manages;
-    private List<Project> projectList;
+    private List<Manager> colleagues = new ArrayList<Manager>();
+    private List<Worker> manages = new ArrayList<Worker>();
+    private List<Project> projectList = new ArrayList<Project>();
 
     //constructors
     public Manager(String inName, String inPhone){
@@ -50,4 +51,13 @@ public class Manager extends Employee{
     public void updateSalary(Employee e,int salary){
         e.setSalary(salary);
     }
+    
+    //override function - managers receive news and then push it to all employees they oversee.
+    /*public void recieveNews(String n){
+	System.out.println("Manager " + name + " has received the message: " + n);
+		
+	//iterates through list of employees and passes on news
+	for (Worker temp : manages){
+            receiveNews(n);
+	}*/
 }

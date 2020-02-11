@@ -1,12 +1,14 @@
 package Main;
 import People.*;
 import Task.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Company {
     private String name;
     private String address;
-    private List<Employee> comEmployees;
+    private String owner;
+    private ArrayList<Employee> compEmpl= new ArrayList<Employee>();
     
     public Company(String n, String a){
         name=n;
@@ -14,7 +16,14 @@ public class Company {
     }
 
     public void hireNewEmployee(Employee e){
-        comEmployees.add(e);
+        compEmpl.add(e);
+    }
+    
+    public void sendAnnounce(String n){
+        System.out.println("Company: " + n);
+        compEmpl.forEach((temp) -> {
+            temp.recieveNews(n);
+        });
     }
     
     public String getName() {
@@ -31,5 +40,9 @@ public class Company {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void add(Company c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

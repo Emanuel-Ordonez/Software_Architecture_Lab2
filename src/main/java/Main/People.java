@@ -3,7 +3,7 @@ import People.*;
 import Task.*;
 
 public class People {
-    private String name;
+    public String name;
     private String phone;
 
     //constructors
