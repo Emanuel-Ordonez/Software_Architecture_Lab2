@@ -1,9 +1,13 @@
 package Main;
-
+import People.*;
+import Task.*;
 
 public class People {
     private String name;
     private String phone;
+
+    //constructors
+
 
     public String getName() {
         return name;

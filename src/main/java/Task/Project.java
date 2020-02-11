@@ -1,5 +1,6 @@
 package Task;
-
+import Main.*;
+import People.*;
 import java.util.List;
 
 

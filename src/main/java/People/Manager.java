@@ -1,13 +1,23 @@
 package People;
-
-import Task.Task;
+import Main.*;
+import Task.*;
 import java.util.List;
 
 
-public class Manager {
+public class Manager extends Employee{
     private Manager Delegate;
     private List<Manager> colleagues;
-    
+
+    //constructors
+    public Manager(){}
+    public Manager(String inName){
+        setName(inName);
+    }
+    public Manager(String inName, String inPhone){
+        setName(inName);
+        setPhone(inPhone);
+    }
+
     public void addWorkerToManager(Worker w){
         
     }

@@ -1,6 +1,6 @@
 package Main;
-
-import People.Employee;
+import People.*;
+import Task.*;
 
 public class Company {
     private String name;

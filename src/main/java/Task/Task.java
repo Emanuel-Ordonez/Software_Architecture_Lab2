@@ -1,5 +1,6 @@
 package Task;
-
+import Main.*;
+import People.*;
 
 public class Task {
     private long taskID;
