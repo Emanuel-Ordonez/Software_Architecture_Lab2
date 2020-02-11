@@ -5,6 +5,9 @@ import People.*;
 public class Task {
     private long taskID;
     private String description;
+    private Worker assignedTo;
+    private Boolean TaskDone;
+    
 
     public long getTaskID() {
         return taskID;
@@ -20,5 +23,21 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Worker getAssignedTo() {
+        return assignedTo;
+    }
+
+    public void setAssignedTo(Worker assignedTo) {
+        this.assignedTo = assignedTo;
+    }
+
+    public Boolean getTaskDone() {
+        return TaskDone;
+    }
+
+    public void setTaskDone(Boolean TaskDone) {
+        this.TaskDone = TaskDone;
     }
 }

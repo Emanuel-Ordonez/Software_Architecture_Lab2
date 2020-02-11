@@ -7,8 +7,12 @@ public class People {
     private String phone;
 
     //constructors
-
-
+       
+    public People(String n, String p){
+        name=n;
+        phone=p;
+    }
+    
     public String getName() {
         return name;
     }

@@ -1,16 +1,15 @@
 package People;
 import Main.*;
 import Task.*;
+import java.util.List;
 
 public class Owner extends People {
-
-    public Owner(){}
-    public Owner(String inName){
-        setName(inName);
-    }
+    private List<Company> owns;
+    private List<Manager> osManager;
+    
+    
     public Owner(String inName, String inPhone){
-        setName(inName);
-        setPhone(inPhone);
+        super(inName,inPhone);
     }
 
     private void createProject(){
@@ -21,8 +20,8 @@ public class Owner extends People {
         
     }
     
-    public void assignProject(){
-        
+    public void assignProject(Manager m, Project p){
+        m.getAssignedProject(p);
     }
     
     public void updateSalary(Manager m){
