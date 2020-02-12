@@ -11,7 +11,7 @@ public class Manager extends Employee{
 
     //constructors
     public Manager(String inName, String inPhone){
-        super(inName,inPhone);
+        super(inName,inPhone,75000);
     }
 
     public void addWorkerToManager(Worker w){

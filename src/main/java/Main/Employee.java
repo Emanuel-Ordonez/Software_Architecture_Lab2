@@ -7,8 +7,11 @@ public class Employee extends People {
     private int salary;
     private String news;
     
-    public Employee(String inName, String inPhone){
+    public Employee(String inName, String inPhone, int s){
         super(inName,inPhone);
+        isOnVacation=false;
+        performanceScale=0;
+        salary=s;
     }
     
     public void recieveNews(String n){

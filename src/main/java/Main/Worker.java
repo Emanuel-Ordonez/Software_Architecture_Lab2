@@ -11,7 +11,7 @@ public class Worker extends Employee{
 
     //constructors
     public Worker(String inName, String inPhone){
-        super(inName,inPhone);
+        super(inName,inPhone,50000);
     }
 
     public void addTaskToWork(Task t){
