@@ -1,6 +1,4 @@
-package People;
-import Main.*;
-import Task.*;
+package Main;
 
 
 public class Employee extends People {
@@ -14,7 +12,7 @@ public class Employee extends People {
     }
     
     public void recieveNews(String n){
-        System.out.println(name +" : " + n);
+        System.out.println(name + ": " + n);
         news = n;
     }
     
@@ -37,4 +35,5 @@ public class Employee extends People {
     public void setPerformanceScale(int performanceScale) {
         this.performanceScale = performanceScale;
     }
+    
 }

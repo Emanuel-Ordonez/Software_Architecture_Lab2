@@ -1,14 +1,16 @@
-package Task;
-import Main.*;
-import People.*;
+package Main;
 
 public class Task {
     private long taskID;
     private String description;
-    private Worker assignedTo;
     private Boolean TaskDone;
     
-
+    public Task(long ID, String d){
+        taskID=ID;
+        description=d;
+        TaskDone = false;
+    } 
+    
     public long getTaskID() {
         return taskID;
     }
@@ -23,14 +25,6 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Worker getAssignedTo() {
-        return assignedTo;
-    }
-
-    public void setAssignedTo(Worker assignedTo) {
-        this.assignedTo = assignedTo;
     }
 
     public Boolean getTaskDone() {

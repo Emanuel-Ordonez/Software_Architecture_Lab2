@@ -1,6 +1,4 @@
-package People;
-import Main.*;
-import Task.*;
+package Main;
 import java.util.ArrayList;
 import java.util.List;
 

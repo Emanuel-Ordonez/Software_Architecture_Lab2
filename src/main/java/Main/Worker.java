@@ -1,6 +1,4 @@
-package People;
-import Main.*;
-import Task.*;
+package Main;
 import java.util.*;
 
 
@@ -20,6 +18,10 @@ public class Worker extends Employee{
         assignedTasks.add(t);
     }
     
+    public void setManager(Manager m){
+        myManager=m;
+    }
+    
     public void performTasks(){
         
     }
@@ -32,8 +34,18 @@ public class Worker extends Employee{
         return assignedTasks;
     }
     
-    protected void setDelegate(){
-        
+    public void printTasks(){
+        System.out.println(this.name + " tasks:");
+        for(Task temp: assignedTasks){
+            System.out.print(temp.getTaskID() + " ");
+        }
+    }
+    
+    public void setDelegate(Worker d){
+        delegate=d;
+        for(Task temp: assignedTasks){
+            delegate.addTaskToWork(temp);
+        }
     }
     
     public void addColleague(Worker c){

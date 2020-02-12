@@ -1,6 +1,4 @@
-package People;
-import Main.*;
-import Task.*;
+package Main;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +16,7 @@ public class Manager extends Employee{
 
     public void addWorkerToManager(Worker w){
         manages.add(w);
+        w.setManager(this);
     }
     
     public List<Worker> getWorkers(){
@@ -25,7 +24,7 @@ public class Manager extends Employee{
     }
     
     public void getAssignedProject(Project p){
-        projectList.add(p);
+        //projectList.add(p);
     }
     
     public void assignTask(Task t,Worker w){
@@ -40,10 +39,6 @@ public class Manager extends Employee{
         e.setPerformanceScale(ev);
     }
     
-    protected void setDelegate(Manager m){
-        Delegate = m;
-    }
-    
     public void addColleague(Manager c){
         colleagues.add(c);
     }
@@ -52,12 +47,17 @@ public class Manager extends Employee{
         e.setSalary(salary);
     }
     
-    //override function - managers receive news and then push it to all employees they oversee.
-    /*public void recieveNews(String n){
-	System.out.println("Manager " + name + " has received the message: " + n);
-		
-	//iterates through list of employees and passes on news
-	for (Worker temp : manages){
-            receiveNews(n);
-	}*/
+    public void printWorkers(){
+        System.out.println(this.name + " Manages:");
+        for(Worker temp: manages){
+            System.out.print(temp.getName() + " ");
+        }
+    }
+    
+    protected void setDelegate(Manager m){
+        Delegate = m;
+        for(Worker temp: manages){
+            Delegate.addWorkerToManager(temp);
+        }
+    }
 }

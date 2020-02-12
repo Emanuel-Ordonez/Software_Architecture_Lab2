@@ -1,6 +1,4 @@
 package Main;
-import People.*;
-import Task.*;
 
 public class People {
     public String name;

@@ -1,8 +1,5 @@
 package Main;
-import People.*;
-import Task.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Company {
     private String name;
@@ -20,7 +17,6 @@ public class Company {
     }
     
     public void sendAnnounce(String n){
-        System.out.println("Company: " + n);
         compEmpl.forEach((temp) -> {
             temp.recieveNews(n);
         });
