@@ -23,28 +23,50 @@ public class Worker extends Employee{
     }
     
     public void performTasks(){
-        
+        Iterator iterator = assignedTasks.iterator();
+        while(iterator.hasNext()){
+            Task temp = (Task)iterator.next();
+			(temp).completeTask();
+			addCompletedTask(temp);
+            iterator.remove();
+		}
     }
     
     public List<Task> getTasksDone(){
         return doneTasks;
     }
+	
+	public void addCompletedTask(Task completedTask){
+        doneTasks.add(completedTask);
+	}
     
     public List<Task> getAssignedTasks(){
         return assignedTasks;
     }
     
+
     public void printTasks(){
-        System.out.println(this.name + " tasks:");
+        System.out.println(this.getName() + "'s tasks:");
         for(Task temp: assignedTasks){
             System.out.print(temp.getTaskID() + " ");
         }
+        System.out.println();
     }
-    
+
+
+    public void sendOnVacation(Worker del) {
+        setDelegate(del);
+        setOnVacation(true);
+        System.out.println(getName() + " is now on vacation. Tasks have been delegated to " + del.getName());
+    }
+	
     public void setDelegate(Worker d){
         delegate=d;
-        for(Task temp: assignedTasks){
-            delegate.addTaskToWork(temp);
+
+        Iterator iterator = assignedTasks.iterator();
+        while(iterator.hasNext()){
+            d.addTaskToWork((Task)iterator.next());
+            iterator.remove();
         }
     }
     

@@ -3,12 +3,12 @@ package Main;
 public class Task {
     private long taskID;
     private String description;
-    private Boolean TaskDone;
+    private Boolean taskDone;
     
     public Task(long ID, String d){
         taskID=ID;
         description=d;
-        TaskDone = false;
+        taskDone = false;
     } 
     
     public long getTaskID() {
@@ -27,11 +27,12 @@ public class Task {
         this.description = description;
     }
 
-    public Boolean getTaskDone() {
-        return TaskDone;
+    public Boolean taskCompleted() {
+        return taskDone;
     }
 
-    public void setTaskDone(Boolean TaskDone) {
-        this.TaskDone = TaskDone;
+    public void completeTask() {
+		System.out.println("Task: " + taskID + " completed");
+        taskDone = true;
     }
 }

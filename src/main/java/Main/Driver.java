@@ -4,6 +4,7 @@ import java.util.List;
 public class Driver {
     public static void main(String[] args) {
         
+		// part a
         Owner craig = new Owner("Craig", "####");
         Company company = new Company("ABCCO","######");
         craig.addCompany(company);
@@ -11,40 +12,62 @@ public class Driver {
         System.out.println("Owner: " + craig.getName());
         
         
-        Manager John = new Manager("John","##");
-        Manager Mary = new Manager("Mary","##");
+        Manager john = new Manager("John","##");
+        Manager mary = new Manager("Mary","##");
         
-        Worker Jack = new Worker("Jack","##");
-        Worker Katie = new Worker("Katie","##");
-        Worker Amy = new Worker("Amy","##");
-        Worker Jim = new Worker("Jim","##");
-        Worker Greg = new Worker("Greg","##");
+        Worker jack = new Worker("Jack","##");
+        Worker katie = new Worker("Katie","##");
+        Worker amy = new Worker("Amy","##");
+        Worker jim = new Worker("Jim","##");
+        Worker greg = new Worker("Greg","##");
         
-        company.hireNewEmployee(John);
-        company.hireNewEmployee(Mary);
+        company.hireNewEmployee(john);
+        company.hireNewEmployee(mary);
         
-        company.hireNewEmployee(Jack);
-        company.hireNewEmployee(Katie);
-        company.hireNewEmployee(Amy);
-        company.hireNewEmployee(Jim);
-        company.hireNewEmployee(Greg);
+        company.hireNewEmployee(jack);
+        company.hireNewEmployee(katie);
+        company.hireNewEmployee(amy);
+        company.hireNewEmployee(jim);
+        company.hireNewEmployee(greg);
         
-        John.addWorkerToManager(Jack);
-        John.addWorkerToManager(Jim);
-        Mary.addWorkerToManager(Katie);
-        Mary.addWorkerToManager(Amy);
-        Mary.addWorkerToManager(Greg);
+        john.addWorkerToManager(jack);
+        john.addWorkerToManager(jim);
+        mary.addWorkerToManager(katie);
+        mary.addWorkerToManager(amy);
+        mary.addWorkerToManager(greg);
         
-        
+		// part b
+		// announcement
         System.out.println("\nAnnouncements to Employees recieved:");
         craig.announceNews("Good Job");
         
-        
-        Task t1 = new Task(12345, "First Test");
+		/* Amy delegates her task to Greg. 
+		Per the explanation, delegation only occurs when an employee goes on vacation
+		Delegation should be added to any/all tasks 
+		
+		*/
+
+        Task t1 = new Task(343, "First Test");
         Task t2 = new Task(12346, "Second Test");
-        
-        Greg.addTaskToWork(t1);
-        Amy.addTaskToWork(t2);
+        greg.addTaskToWork(t1);
+        amy.addTaskToWork(t2);
+        amy.printTasks();
+        greg.printTasks();
+
+        // Sends Amy on vacation and delegates tasks to greg
+        amy.sendOnVacation(greg);
+        amy.printTasks();
+        greg.printTasks();
+
+        // Greg performs tasks
+        greg.performTasks();
+		
+        mary.sendOnVacation(john);
+        mary.work();
+
+
+		/*Old Code
+
         
         System.out.println();
         
@@ -55,5 +78,6 @@ public class Driver {
         
         John.setDelegate(Mary);
         Mary.printWorkers();
+		*/
     }
 }

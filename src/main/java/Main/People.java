@@ -1,7 +1,7 @@
 package Main;
 
 public class People {
-    public String name;
+    private String name;
     private String phone;
 
     //constructors
